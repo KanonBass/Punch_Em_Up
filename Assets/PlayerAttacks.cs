@@ -32,6 +32,8 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] private float kickOffset;
     public UnityEvent<int> AttackEvent;
 
+    public UnityEvent GameOver;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -78,4 +80,6 @@ public class PlayerAttacks : MonoBehaviour
     {
         direction = dir;
     }
+
+
 }

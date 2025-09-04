@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4559692084905827594}
+  - component: {fileID: 5744905424174756993}
   - component: {fileID: -7412238975347519832}
   - component: {fileID: 7137537997488069286}
   - component: {fileID: 3193521837312857145}
@@ -36,6 +37,52 @@ Transform:
   - {fileID: 3879725500553652046}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5744905424174756993
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5968777731245210546}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.625, y: 2.5}
+    newSize: {x: 1.625, y: 2.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.06, y: 2.09}
+  m_EdgeRadius: 0
 --- !u!50 &-7412238975347519832
 Rigidbody2D:
   serializedVersion: 5
@@ -49,9 +96,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2.91
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -62,7 +109,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7137537997488069286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93,7 +140,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -122,16 +169,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPrefab: {fileID: 3779939716105831478, guid: 367003015ee9a9447803695c8e9d7603, type: 3}
-  moveSpeed: 5
-  attackTimer: 0.5
-  idleTimer: 0.5
-  moveThreashHold: 0.1
-  attackThreashHold: 1
+  moveSpeed: 3
+  attackTimer: 1
+  idleTimer: 1
+  moveThreashHold: 1.5
+  attackThreashHold: 2
   attackOffset: 0.6
   sprite: {fileID: 8826904109342301574}
   idleSprite: {fileID: -6953809879147680878, guid: 62021ebf553fc7040b3572eb06615f49, type: 3}
   moveSprite: {fileID: 2185564927967411619, guid: 2c527195e7e374f4a89c4faffd9575d3, type: 3}
   punchSprite: {fileID: 827538889749247048, guid: bc45079544dfbc448b73b9f7de678679, type: 3}
+  maxHealth: 3
+  collide: {fileID: 0}
 --- !u!212 &8826904109342301574
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -36,6 +36,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private Sprite moveSprite;
     [SerializeField] private Sprite punchSprite;
 
+    [SerializeField] private int maxHealth = 3;
+    private int health = 3;
+    [SerializeField] private Collider collide;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -101,4 +105,20 @@ public class EnemyAI : MonoBehaviour
 
         stateTimer += Time.deltaTime;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerHit"))
+        {
+            health--;
+            if (health == 0)
+            {
+                GameObject.Destroy(gameObject);
+            }
+        }
+
+        Debug.Log("Collision");
+    }
+
+
 }
