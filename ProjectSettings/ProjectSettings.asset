@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: b8fa56734a0507e46bcd0966b4759e7d
+  productGUID: 70467c055e2562d489d682b5555ab976
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Punch Em Up
+  productName: Punch Em 2d
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -687,14 +687,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Punch Em Up
+  metroPackageName: Punch Em 2d
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Punch Em Up
+  metroApplicationDescription: Punch Em 2d
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -763,12 +763,12 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: a9351f44-7918-43ed-b0db-60d229701423
+  cloudProjectId: ab2bcb76-ccee-4476-b1ef-0fd8e8520a2d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Punch Em Up
+  projectName: Punch Em 2d
   organizationId: phantasyfantasm
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
