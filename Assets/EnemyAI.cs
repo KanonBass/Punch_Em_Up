@@ -1,11 +1,11 @@
 using System.Threading;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyAI : MonoBehaviour
 {
-    private Rigidbody2D body;
+    private Rigidbody body;
     public GameObject attackPrefab;
 
     private GameObject player;
@@ -40,12 +40,16 @@ public class EnemyAI : MonoBehaviour
     private int health = 3;
     [SerializeField] private Collider collide;
 
+    public UnityEvent EnemyDeath;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         state = idleState;
         currentTimer = idleTimer;
-        body = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody>();
+
+        EnemyDeath.AddListener(GameObject.FindWithTag("Spawner").GetComponent<spawner>().OnDeath);
     }
 
     // Update is called once per frame
@@ -106,19 +110,19 @@ public class EnemyAI : MonoBehaviour
         stateTimer += Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("PlayerHit"))
+        if (other.gameObject.CompareTag("PlayerHit"))
         {
             health--;
-            if (health == 0)
+            if (health < 0)
             {
-                GameObject.Destroy(gameObject);
+                Destroy(gameObject);
+                EnemyDeath.Invoke();
             }
         }
-
-        Debug.Log("Collision");
     }
+        
 
 
 }

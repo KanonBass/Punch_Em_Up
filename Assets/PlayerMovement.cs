@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class PlayerMovement : MonoBehaviour
     private int direction = 1;
 
     private Vector2 movement;
-    private Rigidbody2D playerBody;
+    private Rigidbody playerBody;
+
+    UnityEvent GameOver;
 
     private void Awake()
     {
-        playerBody = GetComponent<Rigidbody2D>();
+        playerBody = GetComponent<Rigidbody>();
     }
 
     private void OnMovement(InputValue value)
@@ -32,13 +35,13 @@ public class PlayerMovement : MonoBehaviour
     {
         playerBody.AddForce(movement*speed);
 
-        if(playerBody.linearVelocityX > 0 && direction<0)
+        if(playerBody.linearVelocity.x > 0 && direction<0)
         {
             direction = 1;
             DirectionChange.Invoke(1);
             
         }
-        else if (playerBody.linearVelocityX < 0 && direction > 0)
+        else if (playerBody.linearVelocity.x < 0 && direction > 0)
         {
             direction = -1;
             DirectionChange.Invoke(-1);
@@ -64,5 +67,15 @@ public class PlayerMovement : MonoBehaviour
         {
             sprite.sprite = kickSprite;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyHit"))
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+
+        Debug.Log("triggered");
     }
 }
